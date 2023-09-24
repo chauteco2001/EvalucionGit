@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="mx">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tutorial css con DWP</title>
+    <%- include('secciones/librerias.html') %>
+</head>
+<body>
+    <%- include('secciones/header.html') %>
+
+    <div id="principal">
+        <div id="contenido">
+            <div class="row">
+                <div class="col col-5">
+                    <form action="/alumnos/modificar/<%=fila[0].NL%>" method="post">
+                        <label for="tfNL">NL</label>
+                        <input type="text" name="tfNL" value="<%=fila[0].NL%>" class="form-control mt-2">
+                        <label for="tfNombre">Nombre</label>
+                        <input type="text" name="tfNombre" value="<%=fila[0].Nombre%>" class="form-control mt-2">
+                        <label for="tfPaterno">Paterno</label>
+                        <input type="text" name="tfPaterno" value="<%=fila[0].Paterno%>" class="form-control mt-2">
+                        <label for="tfMaterno">Materno</label>
+                        <input type="text" name="tfMaterno" value="<%=fila[0].Materno%>" class="form-control mt-2">
+
+                        <button type="submit" class="btn btn-primary mt-2">Modificar</button>
+                    </form>
+                </div>
+                <div class="col col-7">
+                    <table class="table">
+                        <thead>
+                            <tr>
+                                <th>NL</th>
+                                <th>Nombre</th>
+                                <th>Paterno</th>
+                                <th>Materno</th>
+                                <th colspan="2">opciones</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <% for(var i=0; i<data.length; i++) {%>
+                                <tr>
+                                    <td><%=data[i].NL%></td>
+                                    <td><%=data[i].Nombre%></td>
+                                    <td><%=data[i].Paterno%></td>
+                                    <td><%=data[i].Materno%></td>
+                                    <td>
+                                        <form action="/alumnos/editar" method="post">
+                                            <input type="hidden" name="tfNL" value="<%= data[i].NL%>" >
+                                            <button type="submit" class="btn btn-sm btn-warning">Editar</button>
+                                        </form>
+                                    </td>
+                                    <td>
+                                        <a href="/alumnos/eliminar/<%= data[i].NL%>" class="btn btn-sm btn-danger">Eliminar</a>
+                                    </td>
+                                </tr>
+                                <%}%>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <%- include('secciones/footer.html') %>
+</body>
+</html>

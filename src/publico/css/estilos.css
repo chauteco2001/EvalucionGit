@@ -1,0 +1,201 @@
+body
+{
+    font-family: 'Arial';
+    background-color: rgb(241,238,238);
+}
+
+#cabecera{
+    position: fixed;
+    height: 50px;
+    left: 0; right: 0;
+    top: 0; bottom: 0;
+    margin: 0px;
+    padding: 5px;
+    color: white;
+    background-color:#23031d;
+    overflow: hidden;
+}
+
+.linea
+{
+    font-size: 150%;
+    font-weight: bold;
+    color: white;
+    text-align: center;
+}
+
+div#principal
+{
+    position: fixed;
+    top: 55px;
+    bottom: 55px;
+    left: 0px;
+    right: 0px;
+    margin: 5px;
+    padding: 5px;
+    text-align: justify;
+    overflow: auto;
+}
+
+#contenido
+{
+    position: fixed;
+    left: 20px;
+    right: 20px;
+    top: 60px;
+    bottom: 60px;
+    border: 5px solid #1d0401;
+    background-color: #F4ECF7;
+    overflow: auto;
+    margin: 10px auto;
+    padding: 10px;
+}
+
+
+#pie
+{
+    position: fixed;
+    left: 0px;
+    right: 0px;
+    bottom: 0px;
+    height: 50px;
+    margin: 5px;
+    text-align: justify;
+    background-color: #270317;
+    color: white;
+}
+
+#pie .linea{
+    font-size: 100%;
+    line-height: 50px;
+}
+
+/* Reset some default browser styles */
+body, h1, h2, h3, p, ul, li {
+    margin: 0;
+    padding: 0;
+}
+
+/* Apply some basic styling to the form container */
+#contenido {
+    max-width: 400px;
+    margin: 0 auto;
+    padding: 20px;
+    background-color: #f0f0f0;
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+/* Style the input fields */
+input[type="text"],
+input[type="password"] {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 10px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+}
+
+/* Style the submit button */
+input[type="submit"] {
+    width: 15%;
+    padding: 10px;
+    background-color: #007bff;
+    color: white;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+}
+
+input[type="submit"]:hover {
+    background-color: #b32400;
+}
+/* Reset some default browser styles */
+body, h1, h2, h3, p, ul, li {
+    margin: 0;
+    padding: 0;
+}
+
+/* Apply some basic styling to the form container */
+#contenido {
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 20px;
+    background-color: #f0f0f0;
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+/* Style the input fields */
+.form-control {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 10px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+}
+
+/* Style the submit button */
+.st-2 {
+    display: block;
+    width: 15%;
+    padding: 10px;
+    background-color: #007bff;
+    color: white;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+}
+
+.st-2:hover {
+    background-color: #b30000;
+}
+
+/* Style the table */
+.table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 20px;
+}
+
+.table th,
+.table td {
+    padding: 10px;
+    text-align: center;
+    border-bottom: 3px solid #052c13;
+}
+
+.table th {
+    background-color: #19dcd6;
+}
+
+.table:hover{
+      background-color: #19dcd6;
+
+}
+/* Style the edit and delete buttons */
+.btn-edit {
+    background-color: #ffc107;
+    color: white;
+    border: none;
+    border-radius: 4px;
+    padding: 5px 10px;
+    cursor: pointer;
+}
+
+.btn-edit:hover {
+    background-color: #e0a800;
+}
+
+.btn-delete {
+    background-color: #dc3545;
+    color: white;
+    border: none;
+    border-radius: 4px;
+    padding: 5px 10px;
+    cursor: pointer;
+}
+
+.btn-delete:hover {
+    background-color: #c82333;
+}

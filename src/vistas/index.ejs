@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="mx">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>TUTORIAL CSS  de DWP</title>
+    <%- include('secciones/librerias.html') %>
+</head>
+<body>
+    <%- include('secciones/header.html') %>
+
+    <div id="principal">
+        <div id="contenido">
+            <div class="row">
+                <div class="col mb-3">
+                </div>
+            </div>
+
+            <div class="row">
+                <div class="col col-8">
+                </div>
+
+                <div class="col col-4">
+                    <form  name="formLogueo" action="/sesion/iniciar" method="post">
+                        <input type="text" name="tfUsuario" placeholder="USUARIO">
+                        <br><br>
+                        <input type="password" name="tfPassword" placeholder="password">
+                        <br><br>
+                        <input type="submit" name="btnSesion" value="IniciarSesion">
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <%-include('secciones/footer.html') %>
+</body>
+</html>

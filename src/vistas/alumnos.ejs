@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="mx">
+<head>
+    <title>Evaluacion</title>
+    <meta charset="utf-8"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <%- include('secciones/librerias.html') %>
+</head>
+<body>
+    <%- include('secciones/header.html') %>
+
+    <div id="principal">
+        <div id="contenido">
+            <div class="row d-flex justify-content-end">
+                <div class="col col-auto mb-4">
+                    <% if(usuario) { %>
+                        Usuario: <%= usuario %>
+                    <% } %>
+                </div>
+                <div class="col col-auto mb-4">
+                    <form name="formCerrarSesion" action="/sesion/cerrar" method="post">
+                        <input type="submit" value="Cerrar Sesión" class="btn btn-sm btn-dark">
+                    </form>
+                </div>
+            </div>
+
+            <div class="row">
+                <div class="col col-4">
+                    <form action="/alumnos/agregar" method="post">
+                        <input type="text" name="tfNL" id="tfNL" placeholder="Número de lista" class="form-control st-1">
+                        <input type="text" name="tfNombre" id="tfNombre" placeholder="Nombre" class="form-control at-2">
+                        <input type="text" name="tfPaterno" id="tfPaterno" placeholder="Apellido Paterno" class="form-control mt-2">
+                        <input type="text" name="tfMaterno" id="tfMaterno" placeholder="Apellido Materno" class="form-control mt-2">
+                        <button type="submit" class="btn btn-primary st-2">Agregar</button>
+                    </form>
+                </div>
+                <div class="col col-8">
+                    <table class="table">
+                        <thead>
+                            <tr>
+                                <th>NL</th>
+                                <th>Nombre</th>
+                                <th>Paterno</th>
+                                <th>Materno</th>
+                                <th colspan="2">Opciones</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <% for(var i=0; i <data.length; i++) {%>
+                                <tr>
+                                    <td><%=data[i].NL%></td>
+                                    <td><%=data[i].Nombre%></td>
+                                    <td><%=data[i].Paterno%></td>
+                                    <td><%=data[i].Materno%></td>
+                                    <td width="50">
+                                        <form action="/alumnos/editar" method="post">
+                                            <input type="hidden" name="tfNL" value="<%= data[i].NL %>"/>
+                                            <button type="submit" class="btn btn-sm btn-warning">Editar</button>
+                                        </form>
+                                    </td>
+                                    <td width="50">
+                                        <a href="/alumnos/eliminar/<%= data[i].NL %>" class="btn btn-sm btn-danger">Eliminar</a>
+                                    </td>
+                                </tr>
+                            <% } %>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <%- include('secciones/footer.html') %>
+</body>
+</html>
